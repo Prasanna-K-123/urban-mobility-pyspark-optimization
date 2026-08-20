@@ -1,0 +1,9 @@
+pyspark==3.5.1
+pulp
+pandas
+numpy
+geopandas
+pyogrio
+pyarrow
+requests
+matplotlib
