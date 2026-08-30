@@ -81,6 +81,14 @@ The optimized allocation is compared with a **distance-aware greedy heuristic**,
 
 The original executed Colab notebook is retained separately as part of the project working files; this repository exposes the cleaned reproducible pipeline and frozen metrics.
 
+
+## Reproduce
+
+1. Install Java, Python, and the packages in `requirements.txt`.
+2. Run `python src/analysis_pipeline.py` from the repository root.
+3. The script downloads the public Jan-Jun 2025 TLC inputs, rebuilds the complete 6 PM panel, solves the optimization model, and writes regenerated outputs to `results/`.
+4. Confirm that the optimized proxy vehicle-miles do not exceed the distance-aware greedy benchmark and that 1,382 modeled deficit vehicles are covered on the published data snapshot.
+
 ## Limitations
 
 - Pickup/drop-off flow is a proxy for vehicle availability; TLC records do not directly observe idle taxis.
