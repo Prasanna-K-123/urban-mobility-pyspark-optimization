@@ -18,7 +18,7 @@ from pyspark.sql import SparkSession, functions as F
 
 
 DATA_DIR = Path("tlc_project")
-OUTPUT_DIR = Path("project5_outputs")
+OUTPUT_DIR = Path("results")
 MONTHS = [f"{m:02d}" for m in range(1, 7)]
 
 TRIP_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-{month}.parquet"
@@ -319,12 +319,16 @@ def main():
             "raw_rows", "clean_rows", "zones_in_complete_panel",
             "total_expected_surplus", "total_expected_deficit", "vehicles_rebalanced",
             "internal_deficit_coverage", "greedy_total_proxy_vehicle_miles",
-            "optimized_total_proxy_vehicle_miles", "distance_reduction_vs_greedy",
+            "optimized_total_proxy_vehicle_miles", "greedy_avg_proxy_miles_per_vehicle",
+            "optimized_avg_proxy_miles_per_vehicle", "distance_reduction_vs_greedy",
         ],
         "value": [
             raw_rows, clean_rows, len(imbalance), total_surplus, total_deficit, max_moves,
             max_moves / total_deficit if total_deficit else np.nan,
-            greedy_miles, optimal_miles, improvement,
+            greedy_miles, optimal_miles,
+            greedy_miles / max_moves if max_moves else np.nan,
+            optimal_miles / max_moves if max_moves else np.nan,
+            improvement,
         ],
     })
     metrics.to_csv(OUTPUT_DIR / "project5_metrics.csv", index=False)
