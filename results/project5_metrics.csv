@@ -6,8 +6,8 @@ total_expected_surplus,1713.0
 total_expected_deficit,1382.0
 vehicles_rebalanced,1382.0
 internal_deficit_coverage,1.0
-greedy_total_proxy_vehicle_miles,3382.376223550056
+greedy_total_proxy_vehicle_miles,3382.3762235500553
 optimized_total_proxy_vehicle_miles,3255.236358063037
-greedy_avg_proxy_miles_per_vehicle,2.447450234117261
+greedy_avg_proxy_miles_per_vehicle,2.4474502341172615
 optimized_avg_proxy_miles_per_vehicle,2.3554532258053813
-distance_reduction_vs_greedy,0.0375889188795134
+distance_reduction_vs_greedy,0.03758891887951343

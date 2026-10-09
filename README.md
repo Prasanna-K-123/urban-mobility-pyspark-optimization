@@ -1,5 +1,17 @@
 # Urban Mobility Operations & Fleet Rebalancing Optimization with PySpark
 
+## Evidence release — 2026-10-09
+
+[100-case transport verification](results/transport_verification.json) · [Dependency-light solver](src/transport_core.py) · [Full reproduction workflow](.github/workflows/reproduce-tlc.yml)
+
+Forty small networks are checked against exhaustive enumeration, with another sixty checked for capacity/conservation and greedy dominance. These are correctness fixtures, not additional TLC performance measurements. The full public-data pipeline was independently rerun in a pinned Spark/Python environment on 2026-10-09: [successful reproduction](https://github.com/Prasanna-K-123/urban-mobility-pyspark-optimization/actions/runs/37963818458).
+
+The [261-zone aggregate inputs](results/zone_imbalance_weekday_6pm.csv), [optimized flow plan](results/optimized_rebalancing_plan.csv), and [regenerated metrics](results/project5_metrics.csv) are committed so the final allocation can be inspected directly.
+
+[Research scope and next extension](docs/EVIDENCE_REVIEW.md)
+
+---
+
 Independent portfolio project using public **NYC Taxi & Limousine Commission (TLC)** Yellow Taxi trip records.
 
 ## Objective
