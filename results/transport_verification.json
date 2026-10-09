@@ -1,0 +1,8 @@
+{
+  "seed": 20261009,
+  "synthetic_cases": 100,
+  "exhaustive_oracle_cases": 40,
+  "capacity_conservation_and_greedy_comparisons": 60,
+  "all_cases_passed": true,
+  "scope": "Structural correctness; not a rerun of the 24-million-row TLC analysis."
+}

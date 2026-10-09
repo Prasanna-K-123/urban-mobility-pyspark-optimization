@@ -1,0 +1,47 @@
+name: Reproduce TLC decision system
+on:
+  push:
+    paths: ['src/**', 'verify_transport.py', 'tests/**', 'requirements.txt', '.github/workflows/reproduce-tlc.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-correctness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy pandas scipy pytest
+      - run: python -m pytest -q
+      - run: python verify_transport.py
+  full-tlc-reproduction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: pip install -r requirements.txt
+      - run: python src/analysis_pipeline.py
+        env:
+          PYSPARK_SUBMIT_ARGS: '--driver-memory 2g pyspark-shell'
+      - name: Emit inspectable aggregate evidence
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          files={str(p):p.read_text() for p in Path('results').glob('*.csv')}
+          print('TLC_REFERENCE_JSON='+json.dumps(files))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tlc-reference-evidence
+          path: results/
