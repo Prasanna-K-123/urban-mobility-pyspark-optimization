@@ -1,0 +1,28 @@
+name: Frozen later-period flow evidence
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  forward-period:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-forward.txt
+      - run: python -m pip install -r requirements-forward.txt
+      - run: python -m pytest -q
+      - name: Verify committed complete panel
+        run: python benchmark_forward.py --offline
+      - name: Reconstruct panel from pinned July Parquet
+        run: python benchmark_forward.py --download --verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: later-period-flow-evidence
+          path: reference/forward_panel/

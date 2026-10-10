@@ -1,5 +1,9 @@
 # Urban Mobility Operations & Fleet Rebalancing Optimization with PySpark
 
+## Frozen later-period check — October 10, 2026
+
+Unchanged Jan–Jun zone-flow means were evaluated on **6,003 July zone-days** from 3.90 million additional raw trips. MAE **5.7879** versus **12.4033** for a zero-flow sanity comparator; 22/23 days improve, with a paired week-block uncertainty check. This is a later-period flow forecast, **not realized dispatch savings**. [Full protocol, every prediction, baseline limits and raw reconstruction](docs/FORWARD_PERIOD_REVIEW.md).
+
 ## Evidence release — 2026-10-09
 
 [100-case transport verification](results/transport_verification.json) · [Dependency-light solver](src/transport_core.py) · [Full reproduction workflow](.github/workflows/reproduce-tlc.yml)

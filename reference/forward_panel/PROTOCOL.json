@@ -1,0 +1,19 @@
+{
+  "frozen_at": "2026-10-10T03:15:11.231696+00:00",
+  "training_period": "2025-01-01 through2025-06-30; existing locked129-weekday zero-inclusive panel",
+  "training_aggregate_sha256": "a3301e203e89c65951dbfd2e743a6c051517ae0a9d6adf85977d9cfd3856efeb",
+  "evaluation_period": "2025-07-01 through2025-07-31, all weekdays, local NewYork timestamp convention",
+  "evaluation_choice": "Next calendar month after frozen six-month study; retrospective follow-on, not a prospectively conducted2025 experiment",
+  "predictor": "Existing Jan-Jun zone-specific mean net dropoffs-minus-pickups at18:00; no July fitting or tuning",
+  "baseline": "Zero net flow for every zone",
+  "cleaning": "Match original: July pickup month, IDs1..263,0<distance<100, dropoff>pickup, floored elapsed seconds/60 between1and240. Frozen261-zone panel universe; score July dropoffs/pickups at18:00. Report any out-of-universe activity separately.",
+  "metrics": "MAE, RMSE, signed bias on full panel; every daily metric and zero included; no optimizedJuly route or dispatch benefit claim",
+  "uncertainty": "2000 paired ISO-week-block bootstrap draws (retain all zones/days in each sampled week); seed20261010. One-month comparison conditional on frozen historical mean.",
+  "data_source": "Official NYC TLC July2025 Yellow Taxi Parquet; raw and parsed data hashes retained",
+  "interpretation": "Net trip flow is not idle-fleet supply; observed operations, demand and travel constraints not causally controlled. Forward-period forecasting check, not actual savings.",
+  "clarification_before_scoring": {
+    "previous_protocol_sha256": "fa249f881bab32e0648bcdcc9504fc9a477f9bc864908a6ccbfeb0b6929f541d",
+    "at": "2026-10-10T03:17:14.403177+00:00",
+    "reason": "Read original cleaning implementation: strict distance<100 and only pickup month filtering, not dropoff month. No July counts/scores inspected."
+  }
+}

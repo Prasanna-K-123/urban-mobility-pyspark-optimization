@@ -1,0 +1,43 @@
+{
+  "rows": 6003,
+  "weekdays": 23,
+  "zones": 261,
+  "iso_week_blocks": 5,
+  "zero_activity_rows": 1197,
+  "frozen_mean": {
+    "mae": 5.787926450211588,
+    "rmse": 15.180173154818982,
+    "signed_bias": 0.17252226599878445
+  },
+  "zero_baseline": {
+    "mae": 12.403298350824588,
+    "rmse": 34.98137102097934,
+    "signed_bias": -1.0986173579876728
+  },
+  "mean_minus_zero_mae": -6.615371900613,
+  "paired_iso_week_block_ci95": [
+    -7.746767325756898,
+    -4.964824220103557
+  ],
+  "bootstrap_draws": 2000,
+  "days_mean_beats_zero": 22,
+  "days_mean_loses_zero": 1,
+  "raw_rows": 3898963,
+  "clean_rows": 3676278,
+  "outside_frozen_zone_universe_18pm_counts": {
+    "pickups": 0,
+    "dropoffs": 0
+  },
+  "duckdb_version": "1.4.1",
+  "raw_parquet_sha256": "1efa6a0458dc60341f7f81dcbb5015af731f42d1a109f4e0d594dd46970fd4ef",
+  "panel_sha256": "3ca5e1944c6295d5251c1c940748fc0e1f57013fd1a57072b92d88d565fbb6f8",
+  "daily_metrics_sha256": "9880ace6b8578f0e9b35b36e8073887cb5acfb2f390b185fada7f416968be192",
+  "training_aggregate_sha256": "a3301e203e89c65951dbfd2e743a6c051517ae0a9d6adf85977d9cfd3856efeb",
+  "protocol_sha256": "3517a7b531365e6b157122329f075e1d6a55d24782855210a4d9b32a7f4b1746",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "scope": "Net trip flow is not idle-fleet supply; observed operations, demand and travel constraints not causally controlled. Forward-period forecasting check, not actual savings."
+}
