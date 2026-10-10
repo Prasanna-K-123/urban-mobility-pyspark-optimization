@@ -1,0 +1,132 @@
+{
+  "stage": "development",
+  "registered_commit": "43216c7de47c66369fc9fad3e12cf50b202fad33",
+  "protocol_sha256": "b4c4fc9e9130c487eee772f04b15f09404f275f603a2f2384d5adb75ca94e24a",
+  "source_files": [
+    {
+      "month": "2025-01",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet",
+      "bytes": 59158238,
+      "sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+      "captured_at": "2026-10-10T16:45:40.172898+00:00"
+    },
+    {
+      "month": "2025-02",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-02.parquet",
+      "bytes": 60343086,
+      "sha256": "037cba555a73663f3a51a2c27816e40e3feb364769942bdf122b9da31e377bd3",
+      "captured_at": "2026-10-10T16:45:48.376707+00:00"
+    },
+    {
+      "month": "2025-03",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-03.parquet",
+      "bytes": 69964745,
+      "sha256": "20c4b77cce457b7cfdae77c5069ca7dc91c167f876a41467f4502ab69487a186",
+      "captured_at": "2026-10-10T16:45:56.362822+00:00"
+    },
+    {
+      "month": "2025-04",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-04.parquet",
+      "bytes": 67352824,
+      "sha256": "6f98938de9380a3f85600533816f0dc0e6d9b5b210e485d623952bac599bbe28",
+      "captured_at": "2026-10-10T16:46:04.448753+00:00"
+    },
+    {
+      "month": "2025-05",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-05.parquet",
+      "bytes": 77837865,
+      "sha256": "7ef46bcd0fceee7f8c0bb38a532be05bceefabb512d4bb0b32a7727dd862b15c",
+      "captured_at": "2026-10-10T16:46:12.738256+00:00"
+    },
+    {
+      "month": "2025-06",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-06.parquet",
+      "bytes": 73542954,
+      "sha256": "1bea7f5b09c744414451fa7fef09fbc5a393ffb1621c859be6ba0df23a14e1b6",
+      "captured_at": "2026-10-10T16:46:20.862220+00:00"
+    },
+    {
+      "month": "2025-07",
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-07.parquet",
+      "bytes": 66943728,
+      "sha256": "1efa6a0458dc60341f7f81dcbb5015af731f42d1a109f4e0d594dd46970fd4ef",
+      "captured_at": "2026-10-10T16:46:28.989778+00:00"
+    }
+  ],
+  "block_counts": {
+    "2025-01-through-06": {
+      "raw_rows": 24083384,
+      "clean_rows": 22974942,
+      "weekdays": 129,
+      "zone_days": 33669,
+      "zero_activity_rows": 7514,
+      "outside_frozen_universe_18pm_counts": {
+        "pickups": 0,
+        "dropoffs": 0
+      },
+      "source_schema": {
+        "VendorID": "INTEGER",
+        "tpep_pickup_datetime": "TIMESTAMP",
+        "tpep_dropoff_datetime": "TIMESTAMP",
+        "passenger_count": "BIGINT",
+        "trip_distance": "DOUBLE",
+        "RatecodeID": "BIGINT",
+        "store_and_fwd_flag": "VARCHAR",
+        "PULocationID": "INTEGER",
+        "DOLocationID": "INTEGER",
+        "payment_type": "BIGINT",
+        "fare_amount": "DOUBLE",
+        "extra": "DOUBLE",
+        "mta_tax": "DOUBLE",
+        "tip_amount": "DOUBLE",
+        "tolls_amount": "DOUBLE",
+        "improvement_surcharge": "DOUBLE",
+        "total_amount": "DOUBLE",
+        "congestion_surcharge": "DOUBLE",
+        "Airport_fee": "DOUBLE",
+        "cbd_congestion_fee": "DOUBLE"
+      }
+    },
+    "2025-07": {
+      "raw_rows": 3898963,
+      "clean_rows": 3676278,
+      "weekdays": 23,
+      "zone_days": 6003,
+      "zero_activity_rows": 1197,
+      "outside_frozen_universe_18pm_counts": {
+        "pickups": 0,
+        "dropoffs": 0
+      },
+      "source_schema": {
+        "VendorID": "INTEGER",
+        "tpep_pickup_datetime": "TIMESTAMP",
+        "tpep_dropoff_datetime": "TIMESTAMP",
+        "passenger_count": "BIGINT",
+        "trip_distance": "DOUBLE",
+        "RatecodeID": "BIGINT",
+        "store_and_fwd_flag": "VARCHAR",
+        "PULocationID": "INTEGER",
+        "DOLocationID": "INTEGER",
+        "payment_type": "BIGINT",
+        "fare_amount": "DOUBLE",
+        "extra": "DOUBLE",
+        "mta_tax": "DOUBLE",
+        "tip_amount": "DOUBLE",
+        "tolls_amount": "DOUBLE",
+        "improvement_surcharge": "DOUBLE",
+        "total_amount": "DOUBLE",
+        "congestion_surcharge": "DOUBLE",
+        "Airport_fee": "DOUBLE",
+        "cbd_congestion_fee": "DOUBLE"
+      }
+    }
+  },
+  "panel_gzip_sha256": "2e7bf9ed5509f795ce00c4b50db18b226e3772c0e1ec04a0391e5375d2784545",
+  "panel_uncompressed_sha256": "b9122f7654876a5b169a10892b3c2a99198ce03056de2707aa38f41088235c7a",
+  "scope": {
+    "scenario": "Retrospective operator-feed simulation: at each weekday forecast origin, the previous weekday's complete 18:00 net-flow panel is assumed available by 00:00 local time on the target date. All features use strictly earlier dates; no same-day pickups, dropoffs or weather.",
+    "warning": "TLC publishes monthly, typically with a two-month delay. This daily feed is an assumption, not supplied or verified by TLC. No public-release-feasible backtest, original-vintage/PIT claim or deployment claim. Both June model fitting and July selection/refitting require the assumed operator feed.",
+    "parameters": "Candidate model parameters fit through June for July selection; chosen ridge and boosting refit once through July. Parameters are then fixed throughout August-October; rolling history updates are allowed only after the observation date."
+  },
+  "duckdb_version": "1.4.1"
+}

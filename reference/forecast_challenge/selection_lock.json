@@ -1,0 +1,38 @@
+{
+  "protocol_sha256": "b4c4fc9e9130c487eee772f04b15f09404f275f603a2f2384d5adb75ca94e24a",
+  "frozen_code_hashes": {
+    "reference/forecast_challenge/PROTOCOL.json": "b4c4fc9e9130c487eee772f04b15f09404f275f603a2f2384d5adb75ca94e24a",
+    "src/forecast_challenge.py": "cb5523fb53c6aa068f6ae61d511fc6afd4377affcf29b28e1b714bb3138082f2",
+    "collect_forecast_challenge.py": "edfb0b4d2d9781334164b333dc98c9494de62bd8bd29cc95ead82e471e318320",
+    "benchmark_forecast_challenge.py": "b90dab8ac884711eed19f7e4b62c2fb486d1c0b9debc9810baf03cca186825c8",
+    "verify_forecast_challenge.py": "f57a703e6f32c5823584885c0f8cf7666102d4ef1444997e3b60d6507465a607",
+    "requirements-forecast.txt": "bb9bbd02a149f67bf3948eadc28cb356c8898ac6c78ce44992bf4686d65bc369",
+    "tests/test_forecast_challenge.py": "859dc764c25d4fc6a617bdabf215e02897a3cce03d989431e0630be341612ebf"
+  },
+  "selected": {
+    "ridge": "ridge_a100",
+    "boosting": "boosting_l15",
+    "advanced": "boosting_l15",
+    "baseline": "frozen_jan_jun_weekday_mean"
+  },
+  "selected_configs": {
+    "ridge": {
+      "name": "ridge_a100",
+      "family": "ridge",
+      "alpha": 100.0
+    },
+    "boosting": {
+      "name": "boosting_l15",
+      "family": "boosting",
+      "max_leaf_nodes": 15
+    }
+  },
+  "fit_rows": 27666,
+  "selection_rows": 6003,
+  "final_refit_rows": 33669,
+  "selection_rule": "July MAE, lexicographic exact ties; inspected development period",
+  "development_panel_sha256": "2e7bf9ed5509f795ce00c4b50db18b226e3772c0e1ec04a0391e5375d2784545",
+  "created_at": "2026-10-10T16:47:06.474911+00:00",
+  "selection_trials_sha256": "b3b8b7eb8f2c3fe3a19e5829ea78879a8d6f8fd2fe1ed51bb5416ed7bd5d2158",
+  "selection_predictions_sha256": "fa9f008ebb24a792337bcdf18fb033fba128ff17325dd6a01fabcfa0a69047fd"
+}
