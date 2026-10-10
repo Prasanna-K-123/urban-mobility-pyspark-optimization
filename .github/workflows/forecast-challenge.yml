@@ -1,0 +1,31 @@
+name: Registered seasonal and rolling forecasting challenge
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  OMP_NUM_THREADS: '2'
+  OPENBLAS_NUM_THREADS: '2'
+  MKL_NUM_THREADS: '2'
+jobs:
+  forecast-challenge:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-forecast.txt
+      - run: python -m pip install -r requirements-forecast.txt
+      - run: python -m pytest -q
+      - name: Replay registered selection, refits and complete source panels
+        if: hashFiles('reference/forecast_challenge/artifact_manifest.json') != ''
+        run: python verify_forecast_challenge.py --raw
+      - uses: actions/upload-artifact@v4
+        with:
+          name: registered-forecast-challenge
+          path: reference/forecast_challenge/

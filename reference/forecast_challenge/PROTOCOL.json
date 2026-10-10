@@ -1,0 +1,59 @@
+{
+  "registered_at": "2026-10-10T16:37:49Z",
+  "version": "transport-forecast-challenge-v1",
+  "question": "Does a July-selected pooled regression forecast improve weekday 18:00 zone net trip flow over a July-selected seasonal/rolling comparator in an additional fixed three-month period?",
+  "prior_release_commit": "87ff32d9a40fde4bdf948e89b04ec649ba6b758e",
+  "prior_training_aggregate_sha256": "a3301e203e89c65951dbfd2e743a6c051517ae0a9d6adf85977d9cfd3856efeb",
+  "prior_july_panel_sha256": "3ca5e1944c6295d5251c1c940748fc0e1f57013fd1a57072b92d88d565fbb6f8",
+  "inspection_status": {
+    "january_june": "Original study already inspected; reconstructed daily panel is development data.",
+    "july": "Previously inspected one-month mean-versus-zero result. July is explicitly development/model selection here; it is not a new holdout.",
+    "august_october": "No outcomes, file contents, row counts or forecasting scores inspected before registration. Official website links were resolved; the web reader rejected three binary links as unsupported content-type, without supplying their data. No local Parquet download occurred.",
+    "registration": "Publish protocol, executable methods and tests before source collection; publish July selection lock before locally downloading/reconstructing August-October. Retrospective work executed in October 2026, not a prospective 2025 trial."
+  },
+  "partitions": {
+    "history_start": "2025-01-01",
+    "warmup_end": "2025-01-31",
+    "fit_start": "2025-02-03",
+    "fit_end": "2025-06-30",
+    "selection_start": "2025-07-01",
+    "selection_end": "2025-07-31",
+    "final_refit_end": "2025-07-31",
+    "evaluation_start": "2025-08-01",
+    "evaluation_end": "2025-10-31",
+    "evaluation_months": ["2025-08", "2025-09", "2025-10"]
+  },
+  "universe": "Exactly the original 261 LocationIDs, all calendar weekdays including holidays, every zone-date including zero activity. No future activation/zone selection. Report any activity outside this frozen universe.",
+  "target": "Local source wall-clock 18:00-18:59:59 pickup/dropoff event counts; net_flow = dropoffs - pickups. This is signed trip flow, not idle supply or unmet demand.",
+  "cleaning": "Original strict rule: nonnull pickup/dropoff, pickup in registered block, IDs 1..263, 0 < trip_distance < 100, dropoff > pickup, floor(elapsed seconds)/60 between 1 and 240. Jan-Jun files jointly restricted to Jan-Jun exactly as original; July and each evaluation file restricted to its own pickup month. The <=4-hour duration bound prevents prior-month pickups contributing next-month 18:00 dropoffs. Source timestamps are treated as local wall-clock; no timezone conversion.",
+  "availability": {
+    "scenario": "Retrospective operator-feed simulation: at each weekday forecast origin, the previous weekday's complete 18:00 net-flow panel is assumed available by 00:00 local time on the target date. All features use strictly earlier dates; no same-day pickups, dropoffs or weather.",
+    "warning": "TLC publishes monthly, typically with a two-month delay. This daily feed is an assumption, not supplied or verified by TLC. No public-release-feasible backtest, original-vintage/PIT claim or deployment claim. Both June model fitting and July selection/refitting require the assumed operator feed.",
+    "parameters": "Candidate model parameters fit through June for July selection; chosen ridge and boosting refit once through July. Parameters are then fixed throughout August-October; rolling history updates are allowed only after the observation date."
+  },
+  "baselines": [
+    "zero",
+    "frozen_jan_jun_mean",
+    "frozen_jan_jun_weekday_mean",
+    "seasonal_naive_previous_weekday",
+    "rolling_20_weekday_mean",
+    "rolling_20_weekday_median",
+    "previous_4_same_weekday_mean",
+    "previous_4_same_weekday_median"
+  ],
+  "baseline_selection": "Lowest July full-panel MAE among seven nonzero baselines; lexicographic name breaks exact ties. Zero is a sanity comparison only. Report all eight evaluation comparators, never change the primary comparator based on evaluation.",
+  "features": [
+    "prior_expanding_zone_mean", "prior_expanding_same_weekday_mean", "lag_1_weekday", "lag_5_weekdays", "prior_5_weekday_mean", "prior_20_weekday_mean", "prior_20_weekday_median", "prior_20_weekday_std", "prior_4_same_weekday_mean", "prior_4_same_weekday_median", "dow_0", "dow_1", "dow_2", "dow_3", "dow_4", "day_of_year_sin", "day_of_year_cos", "days_since_last_observation"
+  ],
+  "feature_rules": "First 20 prior weekdays and at least four prior same weekdays required; supervised fits start February 3. Historical aggregates are recomputed exclusively from prior observations for each training/selection/evaluation row. No numeric LocationID, current target, fare, current pickup/dropoff totals or future calendar-event realization enters X. Day-of-year and weekday are known calendar features; holidays remain scored, without post-hoc exclusions.",
+  "models": {
+    "ridge": {"alphas": [1.0, 100.0, 10000.0], "standard_scaler": "fit training X only", "solver": "svd", "fit_intercept": true},
+    "boosting": {"leaf_candidates": [7, 15, 31], "loss": "absolute_error", "max_iter": 120, "learning_rate": 0.08, "min_samples_leaf": 40, "l2_regularization": 1.0, "early_stopping": false, "random_state": 20261010, "categorical_features": null},
+    "budget": "Six total candidates, three per family, identical development rows/features; no random split/early-stopping evaluation. Select best July MAE within each family, then the primary advanced winner across both by July MAE/name. Refit only those two selected configurations through July once. Do not test the other four configurations on the final period."
+  },
+  "metrics": {"primary": "MAE on every evaluation zone-date; selected advanced minus selected nonzero baseline", "secondary": ["RMSE", "signed prediction-minus-observation bias", "90th percentile absolute error", "per-month MAE", "every daily MAE", "daily wins/losses", "zero-activity row counts", "top-20-percent activity-zone and remaining-zone MAE"], "high_activity_rule": "Largest ceil(0.2 * 261) zones by January-June mean pickups+dropoffs; deterministic LocationID tie break. Fixed before July selection and final scoring."},
+  "uncertainty": {"draws": 2000, "week_seed": 20261010, "zone_seed": 20261011, "methods": ["Paired ISO-calendar-week cluster bootstrap retaining all zones/dates in sampled weeks", "Paired zone cluster bootstrap retaining all dates in sampled zones"], "limitations": "Separate fixed-fit conditional sensitivity intervals, not joint time-space dependence, independent years, model-refit or July model-selection uncertainty. Retain partial weeks and all dates."},
+  "source": {"official_page": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page", "url_template": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{month}.parquet", "months": ["2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10"], "replay": "Retain raw byte SHA256, file bytes, collection timestamp and block cleaning counts; commit lossless complete daily panels; remote raw reconstruction must fetch pinned official Parquet and recover identical counts/panels. Do not redistribute raw trip records."},
+  "interpretation": "Stronger temporal forecasting check within the same transport family. No live dispatch execution, idle-vehicle observation, causal cost saving, external adoption, frontier/SOTA claim or global optimality. Original 3.76% static proxy-distance optimum/greedy result and the inspected July result remain separate and unchanged.",
+  "method_sources": ["https://otexts.com/fpp3/simple-methods.html", "https://otexts.com/fpp3/tscv.html", "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html", "https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf"]
+}
