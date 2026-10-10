@@ -1,5 +1,11 @@
 # Urban Mobility Operations & Fleet Rebalancing Optimization with PySpark
 
+## Registered seasonal/rolling challenge — October 10, 2026
+
+On **17,226 August-October 2025 zone-days**, July-selected boosting has MAE **5.4020 versus 5.6848** for the locked weekday-mean comparator. Eight simple baselines and equal-budget ridge/boosting candidates were registered before the new period was collected. Every later prediction/day is retained: boosting loses on 21/66 days; ridge has lower RMSE and lower error in the busiest zone group. Rolling inputs require an **assumed daily operator feed**; monthly TLC publications cannot supply it. [Full comparison, public freezes, uncertainty and raw/refit reproduction](docs/FORECAST_CHALLENGE_REVIEW.md).
+
+The 3.76% static proxy-distance result below is separate from this forecasting study; no realised dispatch saving is claimed. The July release remains an unchanged earlier result and is development context for the new comparison.
+
 ## Frozen later-period check — October 10, 2026
 
 Unchanged Jan–Jun zone-flow means were evaluated on **6,003 July zone-days** from 3.90 million additional raw trips. MAE **5.7879** versus **12.4033** for a zero-flow sanity comparator; 22/23 days improve, with a paired week-block uncertainty check. This is a later-period flow forecast, **not realized dispatch savings**. [Full protocol, every prediction, baseline limits and raw reconstruction](docs/FORWARD_PERIOD_REVIEW.md).

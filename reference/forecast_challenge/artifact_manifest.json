@@ -1,0 +1,85 @@
+{
+  "files": {
+    "reference/forecast_challenge/PROTOCOL.json": {
+      "sha256": "b4c4fc9e9130c487eee772f04b15f09404f275f603a2f2384d5adb75ca94e24a",
+      "bytes": 7956
+    },
+    "src/forecast_challenge.py": {
+      "sha256": "cb5523fb53c6aa068f6ae61d511fc6afd4377affcf29b28e1b714bb3138082f2",
+      "bytes": 19343
+    },
+    "collect_forecast_challenge.py": {
+      "sha256": "edfb0b4d2d9781334164b333dc98c9494de62bd8bd29cc95ead82e471e318320",
+      "bytes": 5874
+    },
+    "benchmark_forecast_challenge.py": {
+      "sha256": "b90dab8ac884711eed19f7e4b62c2fb486d1c0b9debc9810baf03cca186825c8",
+      "bytes": 3956
+    },
+    "verify_forecast_challenge.py": {
+      "sha256": "f57a703e6f32c5823584885c0f8cf7666102d4ef1444997e3b60d6507465a607",
+      "bytes": 3500
+    },
+    "requirements-forecast.txt": {
+      "sha256": "bb9bbd02a149f67bf3948eadc28cb356c8898ac6c78ce44992bf4686d65bc369",
+      "bytes": 89
+    },
+    "tests/test_forecast_challenge.py": {
+      "sha256": "859dc764c25d4fc6a617bdabf215e02897a3cce03d989431e0630be341612ebf",
+      "bytes": 6611
+    },
+    "results/zone_imbalance_weekday_6pm.csv": {
+      "sha256": "a3301e203e89c65951dbfd2e743a6c051517ae0a9d6adf85977d9cfd3856efeb",
+      "bytes": 38619
+    },
+    "reference/forward_panel/panel.csv": {
+      "sha256": "3ca5e1944c6295d5251c1c940748fc0e1f57013fd1a57072b92d88d565fbb6f8",
+      "bytes": 349047
+    },
+    "reference/forecast_challenge/development_sources.json": {
+      "sha256": "8d2bc23886ec61060074d7287d7c49853612f4fde83d4b1f21fd515bfbb9f018",
+      "bytes": 5468
+    },
+    "reference/forecast_challenge/evaluation_sources.json": {
+      "sha256": "547309de4cd3ae6936acbacf529685b56c54bb52c56c23ff08112b62c8d59d0d",
+      "bytes": 5358
+    },
+    "reference/forecast_challenge/development_panel.csv.gz": {
+      "sha256": "2e7bf9ed5509f795ce00c4b50db18b226e3772c0e1ec04a0391e5375d2784545",
+      "bytes": 180619
+    },
+    "reference/forecast_challenge/evaluation_panel.csv.gz": {
+      "sha256": "d297a908ab3787c485575040d87df08da3213658efe732c1063e27d6c3159bf8",
+      "bytes": 79575
+    },
+    "reference/forecast_challenge/july_selection_predictions.csv.gz": {
+      "sha256": "fa9f008ebb24a792337bcdf18fb033fba128ff17325dd6a01fabcfa0a69047fd",
+      "bytes": 374074
+    },
+    "reference/forecast_challenge/selection_trials.csv": {
+      "sha256": "b3b8b7eb8f2c3fe3a19e5829ea78879a8d6f8fd2fe1ed51bb5416ed7bd5d2158",
+      "bytes": 1464
+    },
+    "reference/forecast_challenge/selection_lock.json": {
+      "sha256": "93ad914e67a86dab21cef4973c98082632aa93167eeebe9699efd311baa45a37",
+      "bytes": 1771
+    },
+    "reference/forecast_challenge/evaluation_predictions.csv.gz": {
+      "sha256": "91e5ef00f29ec2b608560aa0aa143f94a439b6fbdcb7326b8acad73f40c9fa89",
+      "bytes": 554674
+    },
+    "reference/forecast_challenge/summary.json": {
+      "sha256": "148160ecd157e9ddcef4b46e23cdc28fb1e11e09ce4d3076296ba44930969250",
+      "bytes": 16526
+    },
+    "reference/forecast_challenge/daily_metrics.csv": {
+      "sha256": "2fc1e4fd9816d55a72d02f1fe9484f0db2fb59b6299c435201be7007deb31eea",
+      "bytes": 13595
+    },
+    "reference/forecast_challenge/environment.json": {
+      "sha256": "c9395cbaab109c28e5e2e834e4bf83cf66676c124dcd3d58a398dc4ef2797825",
+      "bytes": 110
+    }
+  },
+  "scope": "Frozen protocol/methods/data/predictions/summary; manifest excludes itself and review prose."
+}

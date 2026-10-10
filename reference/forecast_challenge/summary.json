@@ -1,0 +1,546 @@
+{
+  "zone_days": 17226,
+  "weekdays": 66,
+  "zones": 261,
+  "zero_activity_rows": 3144,
+  "selection": {
+    "ridge": "ridge_a100",
+    "boosting": "boosting_l15",
+    "advanced": "boosting_l15",
+    "baseline": "frozen_jan_jun_weekday_mean"
+  },
+  "model_metrics": {
+    "zero": {
+      "rows": 17226,
+      "mae": 12.845233948682225,
+      "rmse": 35.816825679302646,
+      "signed_bias": -1.2931615000580519,
+      "p90_absolute_error": 33.0
+    },
+    "frozen_jan_jun_mean": {
+      "rows": 17226,
+      "mae": 6.133863809618954,
+      "rmse": 16.15780495601873,
+      "signed_bias": -0.02202187607159828,
+      "p90_absolute_error": 15.038759689922502
+    },
+    "frozen_jan_jun_weekday_mean": {
+      "rows": 17226,
+      "mae": 5.684803740320983,
+      "rmse": 14.611404318731175,
+      "signed_bias": -0.031206226723467838,
+      "p90_absolute_error": 14.09615384615385
+    },
+    "seasonal_naive_previous_weekday": {
+      "rows": 17226,
+      "mae": 7.13566701497736,
+      "rmse": 17.59230190353009,
+      "signed_bias": -0.004586090792987344,
+      "p90_absolute_error": 18.0
+    },
+    "rolling_20_weekday_mean": {
+      "rows": 17226,
+      "mae": 5.880625217694183,
+      "rmse": 15.079193684421513,
+      "signed_bias": 0.000635667014977336,
+      "p90_absolute_error": 14.649999999999999
+    },
+    "rolling_20_weekday_median": {
+      "rows": 17226,
+      "mae": 5.914112388250319,
+      "rmse": 15.304157744936488,
+      "signed_bias": -0.16826309067688378,
+      "p90_absolute_error": 14.75
+    },
+    "previous_4_same_weekday_mean": {
+      "rows": 17226,
+      "mae": 5.824770695460351,
+      "rmse": 14.18255992744036,
+      "signed_bias": -0.022233832578660163,
+      "p90_absolute_error": 14.75
+    },
+    "previous_4_same_weekday_median": {
+      "rows": 17226,
+      "mae": 5.8060199698130734,
+      "rmse": 14.13785717755598,
+      "signed_bias": -0.11619064205271101,
+      "p90_absolute_error": 14.75
+    },
+    "ridge_a100": {
+      "rows": 17226,
+      "mae": 5.474310577964239,
+      "rmse": 13.1141971690885,
+      "signed_bias": -0.7573796554219718,
+      "p90_absolute_error": 13.4669886289233
+    },
+    "boosting_l15": {
+      "rows": 17226,
+      "mae": 5.402016203553447,
+      "rmse": 13.525234154327713,
+      "signed_bias": -0.29611294507419444,
+      "p90_absolute_error": 13.494062685918141
+    }
+  },
+  "monthly_metrics": {
+    "2025-08": {
+      "zero": {
+        "rows": 5481,
+        "mae": 11.825761722313446,
+        "rmse": 33.671039726390354,
+        "signed_bias": -0.9543878854223682,
+        "p90_absolute_error": 28.0
+      },
+      "frozen_jan_jun_mean": {
+        "rows": 5481,
+        "mae": 6.092441966539799,
+        "rmse": 15.899449405736211,
+        "signed_bias": 0.31675173856408523,
+        "p90_absolute_error": 15.6666666666667
+      },
+      "frozen_jan_jun_weekday_mean": {
+        "rows": 5481,
+        "mae": 5.543149060390441,
+        "rmse": 13.804924177957556,
+        "signed_bias": 0.28408516132654105,
+        "p90_absolute_error": 14.038461538461497
+      },
+      "seasonal_naive_previous_weekday": {
+        "rows": 5481,
+        "mae": 6.413793103448276,
+        "rmse": 14.714803823358785,
+        "signed_bias": -0.08538587848932677,
+        "p90_absolute_error": 17.0
+      },
+      "rolling_20_weekday_mean": {
+        "rows": 5481,
+        "mae": 5.4918992884510125,
+        "rmse": 13.759801833824206,
+        "signed_bias": 0.015343915343915368,
+        "p90_absolute_error": 14.1
+      },
+      "rolling_20_weekday_median": {
+        "rows": 5481,
+        "mae": 5.5182448458310525,
+        "rmse": 14.053753310772574,
+        "signed_bias": 0.04989965334792921,
+        "p90_absolute_error": 14.0
+      },
+      "previous_4_same_weekday_mean": {
+        "rows": 5481,
+        "mae": 5.333242109104178,
+        "rmse": 12.415490644946448,
+        "signed_bias": -0.005564677978471082,
+        "p90_absolute_error": 13.75
+      },
+      "previous_4_same_weekday_median": {
+        "rows": 5481,
+        "mae": 5.294198139025725,
+        "rmse": 12.2870197305443,
+        "signed_bias": -0.0090311986863711,
+        "p90_absolute_error": 14.0
+      },
+      "ridge_a100": {
+        "rows": 5481,
+        "mae": 4.9314804640066665,
+        "rmse": 11.286967227994559,
+        "signed_bias": -0.47051316356771133,
+        "p90_absolute_error": 12.6374422223352
+      },
+      "boosting_l15": {
+        "rows": 5481,
+        "mae": 4.952478222685892,
+        "rmse": 11.790235201153871,
+        "signed_bias": -0.08380844704218017,
+        "p90_absolute_error": 12.768027823410307
+      }
+    },
+    "2025-09": {
+      "zero": {
+        "rows": 5742,
+        "mae": 13.128874956461164,
+        "rmse": 35.67697777692246,
+        "signed_bias": -1.6398467432950192,
+        "p90_absolute_error": 35.0
+      },
+      "frozen_jan_jun_mean": {
+        "rows": 5742,
+        "mae": 6.412645568218944,
+        "rmse": 16.974091309456522,
+        "signed_bias": -0.36870711930856565,
+        "p90_absolute_error": 15.624031007751972
+      },
+      "frozen_jan_jun_weekday_mean": {
+        "rows": 5742,
+        "mae": 6.012644214023526,
+        "rmse": 15.889644610717934,
+        "signed_bias": -0.3421697076869489,
+        "p90_absolute_error": 14.653846153846194
+      },
+      "seasonal_naive_previous_weekday": {
+        "rows": 5742,
+        "mae": 7.917624521072797,
+        "rmse": 20.323245523372346,
+        "signed_bias": -0.0022640195053988156,
+        "p90_absolute_error": 20.0
+      },
+      "rolling_20_weekday_mean": {
+        "rows": 5742,
+        "mae": 6.314228491814699,
+        "rmse": 16.29636017424125,
+        "signed_bias": -0.25163706025774996,
+        "p90_absolute_error": 15.895000000000033
+      },
+      "rolling_20_weekday_median": {
+        "rows": 5742,
+        "mae": 6.357105538140021,
+        "rmse": 16.526939103378613,
+        "signed_bias": -0.4790142807384187,
+        "p90_absolute_error": 15.950000000000273
+      },
+      "previous_4_same_weekday_mean": {
+        "rows": 5742,
+        "mae": 6.352011494252873,
+        "rmse": 15.893693381006385,
+        "signed_bias": -0.2870515499825845,
+        "p90_absolute_error": 15.75
+      },
+      "previous_4_same_weekday_median": {
+        "rows": 5742,
+        "mae": 6.279780564263323,
+        "rmse": 15.761823612595288,
+        "signed_bias": -0.40395332636711945,
+        "p90_absolute_error": 15.5
+      },
+      "ridge_a100": {
+        "rows": 5742,
+        "mae": 5.936448800428195,
+        "rmse": 14.604289842406697,
+        "signed_bias": -0.9811838632644012,
+        "p90_absolute_error": 14.371768065931223
+      },
+      "boosting_l15": {
+        "rows": 5742,
+        "mae": 5.862291359268508,
+        "rmse": 15.0499315444828,
+        "signed_bias": -0.5818367507726737,
+        "p90_absolute_error": 14.701694568908934
+      }
+    },
+    "2025-10": {
+      "zero": {
+        "rows": 6003,
+        "mae": 13.504747626186907,
+        "rmse": 37.7961491718476,
+        "signed_bias": -1.2708645677161419,
+        "p90_absolute_error": 35.0
+      },
+      "frozen_jan_jun_mean": {
+        "rows": 6003,
+        "mae": 5.905022940726018,
+        "rmse": 15.580994887960959,
+        "signed_bias": 0.00027505627031158977,
+        "p90_absolute_error": 13.767441860465118
+      },
+      "frozen_jan_jun_weekday_mean": {
+        "rows": 6003,
+        "mae": 5.500554081933394,
+        "rmse": 14.040120610420097,
+        "signed_bias": -0.021637642717102668,
+        "p90_absolute_error": 13.5769230769231
+      },
+      "seasonal_naive_previous_weekday": {
+        "rows": 6003,
+        "mae": 7.046809928369148,
+        "rmse": 17.185042056919276,
+        "signed_bias": 0.06696651674162919,
+        "p90_absolute_error": 18.0
+      },
+      "rolling_20_weekday_mean": {
+        "rows": 6003,
+        "mae": 5.8207979343661505,
+        "rmse": 15.019802202012277,
+        "signed_bias": 0.22851074462768609,
+        "p90_absolute_error": 14.0
+      },
+      "rolling_20_weekday_median": {
+        "rows": 6003,
+        "mae": 5.851824087956022,
+        "rmse": 15.18236497487194,
+        "signed_bias": -0.07021489255372314,
+        "p90_absolute_error": 14.5
+      },
+      "previous_4_same_weekday_mean": {
+        "rows": 6003,
+        "mae": 5.769240379810095,
+        "rmse": 13.958212590943239,
+        "signed_bias": 0.2158504081292687,
+        "p90_absolute_error": 14.5
+      },
+      "previous_4_same_weekday_median": {
+        "rows": 6003,
+        "mae": 5.820173246709978,
+        "rmse": 14.074421136758435,
+        "signed_bias": 0.061219390304847576,
+        "p90_absolute_error": 15.0
+      },
+      "ridge_a100": {
+        "rows": 6003,
+        "mae": 5.527892817046934,
+        "rmse": 13.159950169684471,
+        "signed_bias": -0.8052276448309295,
+        "p90_absolute_error": 13.378348036138602
+      },
+      "boosting_l15": {
+        "rows": 6003,
+        "mae": 5.372200732792023,
+        "rmse": 13.46702422249193,
+        "signed_bias": -0.21665515087009674,
+        "p90_absolute_error": 13.552761583208268
+      }
+    }
+  },
+  "primary": {
+    "advanced": "boosting_l15",
+    "baseline": "frozen_jan_jun_weekday_mean",
+    "mae_difference": -0.28278753676753704,
+    "methods": {
+      "iso_week": {
+        "clusters": 14,
+        "draws": 2000,
+        "seed": 20261010,
+        "interval95": [
+          -0.4846463289750795,
+          -0.13254068706092795
+        ]
+      },
+      "zone": {
+        "clusters": 261,
+        "draws": 2000,
+        "seed": 20261011,
+        "interval95": [
+          -0.5431938377622606,
+          -0.09200517536597935
+        ]
+      }
+    },
+    "scope": "Separate fixed-fit conditional sensitivity intervals, not joint time-space dependence, independent years, model-refit or July model-selection uncertainty. Retain partial weeks and all dates.",
+    "days_advanced_wins": 45,
+    "days_advanced_loses": 21,
+    "days_tied": 0
+  },
+  "high_activity_zones": [
+    237,
+    161,
+    236,
+    230,
+    162,
+    142,
+    234,
+    163,
+    170,
+    239,
+    68,
+    141,
+    186,
+    48,
+    246,
+    164,
+    238,
+    132,
+    263,
+    229,
+    107,
+    79,
+    140,
+    249,
+    231,
+    90,
+    138,
+    113,
+    262,
+    143,
+    100,
+    233,
+    43,
+    114,
+    158,
+    137,
+    144,
+    211,
+    148,
+    151,
+    50,
+    13,
+    87,
+    75,
+    166,
+    125,
+    261,
+    74,
+    41,
+    88,
+    232,
+    24,
+    224
+  ],
+  "activity_strata": {
+    "high_activity_20pct": {
+      "zones": 53,
+      "rows": 3498,
+      "metrics": {
+        "zero": {
+          "rows": 3498,
+          "mae": 49.93310463121784,
+          "rmse": 78.5723783477528,
+          "signed_bias": 5.327615780445969,
+          "p90_absolute_error": 108.30000000000018
+        },
+        "frozen_jan_jun_mean": {
+          "rows": 3498,
+          "mae": 22.88783845475376,
+          "rmse": 35.28016948365992,
+          "signed_bias": 2.031286981265024,
+          "p90_absolute_error": 54.289922480620184
+        },
+        "frozen_jan_jun_weekday_mean": {
+          "rows": 3498,
+          "mae": 20.647826450279286,
+          "rmse": 31.784625921032422,
+          "signed_bias": 1.991807626335929,
+          "p90_absolute_error": 47.81384615384614
+        },
+        "seasonal_naive_previous_weekday": {
+          "rows": 3498,
+          "mae": 25.549456832475702,
+          "rmse": 38.12362155275011,
+          "signed_bias": 0.08747855917667238,
+          "p90_absolute_error": 58.0
+        },
+        "rolling_20_weekday_mean": {
+          "rows": 3498,
+          "mae": 21.722527158376213,
+          "rmse": 32.87359679452893,
+          "signed_bias": 0.247598627787307,
+          "p90_absolute_error": 50.849999999999994
+        },
+        "rolling_20_weekday_median": {
+          "rows": 3498,
+          "mae": 21.99971412235563,
+          "rmse": 33.369271650002894,
+          "signed_bias": 0.1540880503144654,
+          "p90_absolute_error": 52.5
+        },
+        "previous_4_same_weekday_mean": {
+          "rows": 3498,
+          "mae": 20.83147512864494,
+          "rmse": 30.748223091268873,
+          "signed_bias": 0.19911377930245855,
+          "p90_absolute_error": 47.75
+        },
+        "previous_4_same_weekday_median": {
+          "rows": 3498,
+          "mae": 20.79874213836478,
+          "rmse": 30.643526706108634,
+          "signed_bias": 0.11463693539165237,
+          "p90_absolute_error": 47.15000000000009
+        },
+        "ridge_a100": {
+          "rows": 3498,
+          "mae": 19.037519723117068,
+          "rmse": 28.37168305829654,
+          "signed_bias": -0.24843707437886306,
+          "p90_absolute_error": 43.52515608977564
+        },
+        "boosting_l15": {
+          "rows": 3498,
+          "mae": 19.513381608520966,
+          "rmse": 29.360676219284667,
+          "signed_bias": 0.2465382412596954,
+          "p90_absolute_error": 45.662052485916824
+        }
+      }
+    },
+    "remaining_80pct": {
+      "zones": 208,
+      "rows": 13728,
+      "metrics": {
+        "zero": {
+          "rows": 13728,
+          "mae": 3.3949592074592077,
+          "rmse": 6.052954450163786,
+          "signed_bias": -2.98018648018648,
+          "p90_absolute_error": 9.0
+        },
+        "frozen_jan_jun_mean": {
+          "rows": 13728,
+          "mae": 1.8648221933105655,
+          "rmse": 3.2313797243520264,
+          "signed_bias": -0.5452207676044877,
+          "p90_absolute_error": 4.426356589147291
+        },
+        "frozen_jan_jun_weekday_mean": {
+          "rows": 13728,
+          "mae": 1.8721104536489153,
+          "rmse": 3.2357668789643714,
+          "signed_bias": -0.5466857181280257,
+          "p90_absolute_error": 4.53846153846154
+        },
+        "seasonal_naive_previous_weekday": {
+          "rows": 13728,
+          "mae": 2.443691724941725,
+          "rmse": 4.243713642301454,
+          "signed_bias": -0.028044871794871796,
+          "p90_absolute_error": 6.0
+        },
+        "rolling_20_weekday_mean": {
+          "rows": 13728,
+          "mae": 1.8439867424242424,
+          "rmse": 3.155455469590895,
+          "signed_bias": -0.06229239510489509,
+          "p90_absolute_error": 4.35
+        },
+        "rolling_20_weekday_median": {
+          "rows": 13728,
+          "mae": 1.815377331002331,
+          "rmse": 3.188592470128386,
+          "signed_bias": -0.250400641025641,
+          "p90_absolute_error": 4.0
+        },
+        "previous_4_same_weekday_mean": {
+          "rows": 13728,
+          "mae": 2.0009469696969697,
+          "rmse": 3.3896234173462267,
+          "signed_bias": -0.07863490675990675,
+          "p90_absolute_error": 4.75
+        },
+        "previous_4_same_weekday_median": {
+          "rows": 13728,
+          "mae": 1.9857590326340326,
+          "rmse": 3.396871310897309,
+          "signed_bias": -0.17500728438228438,
+          "p90_absolute_error": 5.0
+        },
+        "ridge_a100": {
+          "rows": 13728,
+          "mae": 2.0183005554012587,
+          "rmse": 3.2705478487323854,
+          "signed_bias": -0.887062140014687,
+          "p90_absolute_error": 4.559750548393838
+        },
+        "boosting_l15": {
+          "rows": 13728,
+          "mae": 1.8063317494030684,
+          "rmse": 3.1444609065655262,
+          "signed_bias": -0.4343846415919644,
+          "p90_absolute_error": 4.309548769608951
+        }
+      }
+    }
+  },
+  "availability": {
+    "scenario": "Retrospective operator-feed simulation: at each weekday forecast origin, the previous weekday's complete 18:00 net-flow panel is assumed available by 00:00 local time on the target date. All features use strictly earlier dates; no same-day pickups, dropoffs or weather.",
+    "warning": "TLC publishes monthly, typically with a two-month delay. This daily feed is an assumption, not supplied or verified by TLC. No public-release-feasible backtest, original-vintage/PIT claim or deployment claim. Both June model fitting and July selection/refitting require the assumed operator feed.",
+    "parameters": "Candidate model parameters fit through June for July selection; chosen ridge and boosting refit once through July. Parameters are then fixed throughout August-October; rolling history updates are allowed only after the observation date."
+  },
+  "interpretation": "Stronger temporal forecasting check within the same transport family. No live dispatch execution, idle-vehicle observation, causal cost saving, external adoption, frontier/SOTA claim or global optimality. Original 3.76% static proxy-distance optimum/greedy result and the inspected July result remain separate and unchanged."
+}
